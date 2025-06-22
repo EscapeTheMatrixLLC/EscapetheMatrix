@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape The Matrix - Your Path to Freedom</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0f0f;
+            color: #e0e0e0;
+        }
+        .hero-section {
+            background-image: url('https://placehold.co/1a1a1a/00ff00');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .btn-primary {
+            background-color: #00ff00;
+            color: #0f0f0f;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.4);
+        }
+        .btn-primary:hover {
+            background-color: #00e600;
+            box-shadow: 0 6px 20px rgba(0, 255, 0, 0.6);
+            transform: translateY(-2px);
+        }
+        .card {
+            background-color: #1a1a1a;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+        .input-field {
+            background-color: #2a2a2a;
+            border: 1px solid #00ff00;
+            color: #e0e0e0;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            width: 100%;
+        }
+        .footer-link {
+            color: #00ff00;
+            text-decoration: none;
+        }
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Pop-up Specific Styles --- */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Ensure it's on top */
+            visibility: hidden; /* Hidden by default */
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .popup-content {
+            background-color: #1a1a1a; /* Same as card background */
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.4); /* Green glow */
+            max-width: 500px;
+            width: 90%; /* Responsive width */
+            text-align: center;
+            position: relative;
+            transform: scale(0.9); /* Slightly smaller when hidden */
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .popup-overlay.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup-overlay.show .popup-content {
+            transform: scale(1); /* Full size when shown */
+        }
+
+        .popup-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #00ff00; /* Green close button */
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .popup-close-btn:hover {
+            color: #ffffff; /* White on hover */
+        }
+
+        /* Styles for form messages */
+        .form-message {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        .form-message.success {
+            background-color: #1a4a1a;
+            color: #00ff00;
+        }
+        .form-message.error {
+            background-color: #4a1a1a;
+            color: #ff0000;
+        }
+    </style>
+    <!-- MailerLite Universal Script (Provided by MailerLite) -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1609458');
+    </script>
+    <!-- End MailerLite Universal -->
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg py-4 px-6 md:px-12 sticky top-0 z-50 rounded-b-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-green-400">The Awakening</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#books" class="text-lg text-gray-300 hover:text-green-400 transition duration-300">Books</a></li>
+                    <li><a href="#news" class="text-lg text-gray-300 hover:text-green-400 transition duration-300">Newsletter</a></li>
+                    <li><a href="#contact" class="text-lg text-gray-300 hover:text-green-400 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section h-screen flex items-center justify-center text-center text-white relative">
+        <div class="overlay"></div>
+        <div class="relative z-10 px-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg">
+                Are You Ready to <span class="text-green-400">Unplug</span>?
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto drop-shadow-md">
+                Discover the truth, break free from the system, and reclaim your true reality. Your journey begins now.
+            </p>
+            <a href="#the-plan" class="btn-primary inline-block">
+                Start your awakening
+            </a>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books" class="py-20 px-6 md:px-12 bg-gray-800">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-green-400 mb-12">Essential Reading for Your Liberation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Book 1 -->
+                <div class="card flex flex-col justify-between">
+                    <div>
+                        <img src="https://i.imgur.com/O4T1aT0.jpeg" alt="Escaping the Matrix: The Journey of Eli" class="rounded-lg mb-6 w-full h-auto object-cover">
+                        <h3 class="text-2xl font-bold text-white mb-3">Escaping the Matrix: The Journey of Eli</h3>
+                        <p class="text-md text-gray-400 mb-4 line-clamp-3">
+                            Join Eli on a profound journey of self-discovery and liberation. This gripping narrative explores the subtle mechanisms of control and the courage it takes to break free from a simulated reality. A must-read for those seeking true autonomy.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between mt-6">
+                        <span class="text-2xl font-bold text-green-400">$11.50</span>
+                        <a href="https://www.amazon.com/gp/product/B0DTYNLJ7T?ref_=dbs_m_mng_rwt_calw_tpbk_0&storeType=ebooks" class="btn-primary py-2 px-4 text-base inline-block" target="_blank" rel="noopener noreferrer">Buy Now</a>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="card flex flex-col justify-between">
+                    <div>
+                        <img src="https://i.imgur.com/gQhfMad.jpeg" alt="Stand Out in a Crowd: Escape The Matrix With These Experts!" class="rounded-lg mb-6 w-full h-auto object-cover">
+                        <h3 class="text-2xl font-bold text-white mb-3">Stand Out in a Crowd</h3>
+                        <p class="text-md text-gray-400 mb-4 line-clamp-3">
+                            This transformative guide provides practical strategies and insights from various experts to help you stand apart from the ordinary. Learn how to cultivate unique perspectives and embrace individuality in a world designed for conformity.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between mt-6">
+                        <span class="text-2xl font-bold text-green-400">$14.00</span>
+                        <a href="https://www.amazon.com/gp/product/B0F1YVJDCG?ref_=dbs_m_mng_rwt_calw_tpbk_1&storeType=ebooks" class="btn-primary py-2 px-4 text-base inline-block" target="_blank" rel="noopener noreferrer">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Newsletter Section -->
+    <section id="news" class="py-20 px-6 md:px-12 bg-gray-900 text-center">
+            <!-- Right side: MailerLite Form Embed in its own card -->
+                <!-- MailerLite Form Embed (Provided by MailerLite) -->
+                <div class="ml-embedded" data-form="KZpUZS"></div>
+                <!-- End MailerLite Form Embed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 md:px-12 bg-gray-800">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-green-400 mb-12">Connect With Us</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                <div class="md:w-1/2 card">
+                    <h3 class="text-2xl font-bold text-white mb-4">Send a Secure Transmission</h3>
+                    <!-- Contact Form for Google Apps Script -->
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-400 text-sm font-bold mb-2">Name:</label>
+                            <input type="text" id="name" name="name" class="input-field" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-400 text-sm font-bold mb-2">Email:</label>
+                            <input type="email" id="email" name="email" class="input-field" placeholder="Your Encrypted Email" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-400 text-sm font-bold mb-2">Message:</label>
+                            <textarea id="message" name="message" rows="5" class="input-field" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Send Message</button>
+                    </form>
+                    <div id="contactFormMessage" class="form-message hidden"></div>
+                </div>
+                <div class="md:w-1/2 card text-center">
+                    <h3 class="text-2xl font-bold text-white mb-4">Our Hidden Outpost</h3>
+                    <p class="text-lg text-gray-300 mb-6">
+                        We operate from a secure, undisclosed location. For direct contact, use the form or send a PGP encrypted email to:
+                    </p>
+                    <p class="text-xl font-mono text-green-400 break-words mb-6">
+                        escapethematrixgroup@gmail.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 px-6 md:px-12 text-center text-gray-500 text-sm rounded-t-lg">
+        <div class="container mx-auto">
+            <p>&copy; 2025 The Awakening. All rights reserved. <span class="text-green-400">Freedom is a choice.</span></p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pop-up HTML Structure -->
+    <div id="protocolPopupOverlay" class="popup-overlay">
+        <div class="popup-content">
+            <button id="closeProtocolPopupBtn" class="popup-close-btn">&times;</button>
+            <h3 class="text-3xl font-bold text-green-400 mb-4">Protocol Details</h3>
+            <p class="text-lg text-gray-300 mb-6">
+                This pop-up contains exclusive information about the Grand Awakening Protocol.
+                Imagine this space filled with the intricate diagrams and secret codes of liberation!
+            </p>
+            <p class="text-md text-gray-400">
+                You can put any HTML content here: images, videos, more text, or even a smaller form.
+            </p>
+            <button class="btn-primary mt-6">Learn More Secret Info</button>
+        </div>
+    </div>
+
+    <script>
+        // --- Pop-up JavaScript (Existing) ---
+        const openProtocolPopupBtn = document.getElementById('openProtocolPopupBtn');
+        const protocolPopupOverlay = document.getElementById('protocolPopupOverlay');
+        const closeProtocolPopupBtn = document.getElementById('closeProtocolPopupBtn');
+
+        function showPopup() {
+            protocolPopupOverlay.classList.add('show');
+        }
+
+        function hidePopup() {
+            protocolPopupOverlay.classList.remove('show');
+        }
+
+        if (openProtocolPopupBtn) {
+            openProtocolPopupBtn.addEventListener('click', showPopup);
+        }
+
+        if (closeProtocolPopupBtn) {
+            closeProtocolPopupBtn.addEventListener('click', hidePopup);
+        }
+
+        if (protocolPopupOverlay) {
+            protocolPopupOverlay.addEventListener('click', function(event) {
+                if (event.target === protocolPopupOverlay) {
+                    hidePopup();
+                }
+            });
+        }
+
+        // --- Contact Form JavaScript (New) ---
+        const contactForm = document.getElementById('contactForm');
+        const contactFormMessage = document.getElementById('contactFormMessage');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(event) {
+                event.preventDefault(); // Prevent default form submission (page reload)
+
+                // Replace with the Web app URL you got from Google Apps Script deployment
+                const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbybbIYhZ69bbu6MNNgwFDWTGMTQBPKRbys7uag5l-yt7z-2IXSfu7DP13LbDEbpsocg/exec'; // <<< IMPORTANT!
+
+                // Display loading message
+                contactFormMessage.textContent = 'Sending message...';
+                contactFormMessage.className = 'form-message'; // Reset classes
+                contactFormMessage.classList.remove('hidden');
+
+                const formData = new FormData(contactForm);
+                // Convert FormData to a plain object for JSON
+                const data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+
+                try {
+                    const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors', // Important for Google Apps Script web apps
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data),
+                    });
+
+                    // Even with 'no-cors', we can't directly read the response JSON.
+                    // Instead, we assume success if no network error occurred.
+                    // For a more robust solution, you'd need a specific CORS setup on Apps Script.
+
+                    contactFormMessage.textContent = 'Message sent successfully! We will get back to you soon.';
+                    contactFormMessage.className = 'form-message success';
+                    contactForm.reset(); // Clear the form
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    contactFormMessage.textContent = 'Failed to send message. Please try again later.';
+                    contactFormMessage.className = 'form-message error';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
