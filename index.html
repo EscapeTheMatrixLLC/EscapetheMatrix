@@ -6,135 +6,7 @@
     <title>Escape The Matrix - Your Path to Freedom</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f0f0f;
-            color: #e0e0e0;
-        }
-        .hero-section {
-            background-image: url('https://placehold.co/1a1a1a/00ff00');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.7);
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
-        .btn-primary {
-            background-color: #00ff00;
-            color: #0f0f0f;
-            padding: 1rem 2.5rem;
-            border-radius: 9999px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.4);
-        }
-        .btn-primary:hover {
-            background-color: #00e600;
-            box-shadow: 0 6px 20px rgba(0, 255, 0, 0.6);
-            transform: translateY(-2px);
-        }
-        .card {
-            background-color: #1a1a1a;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-        }
-        .input-field {
-            background-color: #2a2a2a;
-            border: 1px solid #00ff00;
-            color: #e0e0e0;
-            border-radius: 0.5rem;
-            padding: 0.75rem 1rem;
-            width: 100%;
-        }
-        .footer-link {
-            color: #00ff00;
-            text-decoration: none;
-        }
-        .footer-link:hover {
-            text-decoration: underline;
-        }
-
-        /* --- Pop-up Specific Styles --- */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7); /* Dark overlay */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000; /* Ensure it's on top */
-            visibility: hidden; /* Hidden by default */
-            opacity: 0;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .popup-content {
-            background-color: #1a1a1a; /* Same as card background */
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.4); /* Green glow */
-            max-width: 500px;
-            width: 90%; /* Responsive width */
-            text-align: center;
-            position: relative;
-            transform: scale(0.9); /* Slightly smaller when hidden */
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .popup-overlay.show {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .popup-overlay.show .popup-content {
-            transform: scale(1); /* Full size when shown */
-        }
-
-        .popup-close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #00ff00; /* Green close button */
-            cursor: pointer;
-            transition: color 0.2s ease;
-        }
-
-        .popup-close-btn:hover {
-            color: #ffffff; /* White on hover */
-        }
-
-        /* Styles for form messages */
-        .form-message {
-            margin-top: 1rem;
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            font-weight: bold;
-        }
-        .form-message.success {
-            background-color: #1a4a1a;
-            color: #00ff00;
-        }
-        .form-message.error {
-            background-color: #4a1a1a;
-            color: #ff0000;
-        }
-    </style>
-    <!-- MailerLite Universal Script (Provided by MailerLite) -->
+    <link rel="stylesheet" href="style.css">
     <script>
         (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
         .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
@@ -142,7 +14,6 @@
         (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
         ml('account', '1609458');
     </script>
-    <!-- End MailerLite Universal -->
 </head>
 <body class="antialiased">
 
@@ -152,7 +23,7 @@
             <a href="#" class="text-3xl font-bold text-green-400">Escape the Matrix Group</a>
             <nav>
                 <ul class="flex space-x-6">
-                    <li><a href="index.html" class="text-lg text-gray-300 hover:text-green-400 transition duration-300">Home</a></li>
+                    <li><a href="index.html" class="text-lg text-green-400 hover:text-green-400 transition duration-300">Home</a></li>
                     <li><a href="about.html" class="text-lg text-gray-300 hover:text-green-400 transition duration-300">About</a></li>
                     <li><a href="index.html#books" class="text-lg text-gray-300 hover:text-green-400 transition duration-300">Books</a></li>
                     <li><a href="index.html#news" class="text-lg text-gray-300 hover:text-green-400 transition duration-300">Newsletter</a></li>
@@ -268,12 +139,11 @@
             <div class="mt-4 space-x-4">
                 <a href="#" class="footer-link">Privacy Policy</a>
                 <a href="#" class="footer-link">Terms of Service</a>
-                <a href="#" class="footer-link">Disclaimer</a>
+                <a href="disclaimer.html" class="footer-link">Disclaimer</a>
             </div>
         </div>
     </footer>
 
-    <!-- Pop-up HTML Structure -->
     <div id="protocolPopupOverlay" class="popup-overlay">
         <div class="popup-content">
             <button id="closeProtocolPopupBtn" class="popup-close-btn">&times;</button>
@@ -288,84 +158,6 @@
             <button class="btn-primary mt-6">Learn More Secret Info</button>
         </div>
     </div>
-
-    <script>
-        // --- Pop-up JavaScript (Existing) ---
-        const openProtocolPopupBtn = document.getElementById('openProtocolPopupBtn');
-        const protocolPopupOverlay = document.getElementById('protocolPopupOverlay');
-        const closeProtocolPopupBtn = document.getElementById('closeProtocolPopupBtn');
-
-        function showPopup() {
-            protocolPopupOverlay.classList.add('show');
-        }
-
-        function hidePopup() {
-            protocolPopupOverlay.classList.remove('show');
-        }
-
-        if (openProtocolPopupBtn) {
-            openProtocolPopupBtn.addEventListener('click', showPopup);
-        }
-
-        if (closeProtocolPopupBtn) {
-            closeProtocolPopupBtn.addEventListener('click', hidePopup);
-        }
-
-        if (protocolPopupOverlay) {
-            protocolPopupOverlay.addEventListener('click', function(event) {
-                if (event.target === protocolPopupOverlay) {
-                    hidePopup();
-                }
-            });
-        }
-
-        // --- Contact Form JavaScript (New) ---
-        const contactForm = document.getElementById('contactForm');
-        const contactFormMessage = document.getElementById('contactFormMessage');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', async function(event) {
-                event.preventDefault(); // Prevent default form submission (page reload)
-
-                // Replace with the Web app URL you got from Google Apps Script deployment
-                const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbybbIYhZ69bbu6MNNgwFDWTGMTQBPKRbys7uag5l-yt7z-2IXSfu7DP13LbDEbpsocg/exec'; // <<< IMPORTANT!
-
-                // Display loading message
-                contactFormMessage.textContent = 'Sending message...';
-                contactFormMessage.className = 'form-message'; // Reset classes
-                contactFormMessage.classList.remove('hidden');
-
-                const formData = new FormData(contactForm);
-                // Convert FormData to a plain object for JSON
-                const data = {};
-                formData.forEach((value, key) => {
-                    data[key] = value;
-                });
-
-                try {
-                    const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
-                        method: 'POST',
-                        mode: 'no-cors', // Important for Google Apps Script web apps
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(data),
-                    });
-
-                    // Even with 'no-cors', we can't directly read the response JSON.
-                    // Instead, we assume success if no network error occurred.
-                    // For a more robust solution, you'd need a specific CORS setup on Apps Script.
-
-                    contactFormMessage.textContent = 'Message sent successfully! We will get back to you soon.';
-                    contactFormMessage.className = 'form-message success';
-                    contactForm.reset(); // Clear the form
-                } catch (error) {
-                    console.error('Error submitting form:', error);
-                    contactFormMessage.textContent = 'Failed to send message. Please try again later.';
-                    contactFormMessage.className = 'form-message error';
-                }
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
