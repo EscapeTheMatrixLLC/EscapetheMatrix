@@ -1,14 +1,20 @@
+/* Custom Styles for Escape The Matrix Website */
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #0f0f0f;
     color: #e0e0e0;
 }
+
+/* Hero Section Background Image */
 .hero-section {
-    background-image: url('https://placehold.co/1a1a1a/00ff00');
+    background-image: url('https://placehold.co/1a1a1a/00ff00'); /* You can replace this with your desired background image URL */
     background-size: cover;
     background-position: center;
     position: relative;
+    /* min-height property is now on the HTML section itself for better responsiveness */
 }
+
 .overlay {
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
@@ -17,26 +23,33 @@ body {
     right: 0;
     bottom: 0;
 }
+
+/* Primary Button Styling */
 .btn-primary {
     background-color: #00ff00;
     color: #0f0f0f;
-    padding: 1rem 2.5rem;
+    padding: 1rem 2.5rem; /* Base padding for smaller screens */
     border-radius: 9999px;
     font-weight: 700;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 255, 0, 0.4);
 }
+
 .btn-primary:hover {
     background-color: #00e600;
     box-shadow: 0 6px 20px rgba(0, 255, 0, 0.6);
     transform: translateY(-2px);
 }
+
+/* Card Styling */
 .card {
     background-color: #1a1a1a;
     border-radius: 1rem;
-    padding: 1.5rem;
+    padding: 1.5rem; /* Base padding for smaller screens */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
+
+/* Input Field Styling */
 .input-field {
     background-color: #2a2a2a;
     border: 1px solid #00ff00;
@@ -45,10 +58,13 @@ body {
     padding: 0.75rem 1rem;
     width: 100%;
 }
+
+/* Footer Link Styling */
 .footer-link {
     color: #00ff00;
     text-decoration: none;
 }
+
 .footer-link:hover {
     text-decoration: underline;
 }
